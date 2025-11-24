@@ -90,11 +90,16 @@
 </head>
 
 <body>
+  <form id="shopierForm" action="https://www.shopier.com/s/shipping/borfirbora" method="POST">
+    <input type="hidden" name="product_id" value="33046312">
+    <input type="hidden" name="quantity" value="1">
+  </form>
   <header>
     <nav>
       <ul>
-        <li><a href="https://server.borfirbora.com/EduAppNVDA-1.0.exe" target="_blank">Eğitim Yazılımını İndirin</a></li>
-        <li><a href="https://www.shopier.com/s/product/33046312" target="_blank">Eğitimi Satın Alın</a></li>
+        <li><a href="https://server.borfirbora.com/EduAppNVDA-1.0.exe" target="_blank">Eğitim Yazılımını İndirin</a>
+        </li>
+        <li><a onclick="document.getElementById('shopierForm').submit(); return false;">Eğitimi Satın Alın</a></li>
         <li><a href="#nvda-hakkinda">NVDA Hakkında</a></li>
         <li><a href="#nvda-egitimi">NVDA Eğitimi Hakkında</a></li>
         <li><a href="#egitim-kimler-icin">Eğitim Kimler İçin?</a></li>
