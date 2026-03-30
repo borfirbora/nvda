@@ -452,6 +452,100 @@
   <footer>
     <p>&copy; 2025 NVDA Eğitim. Tüm hakları saklıdır.</p>
   </footer>
+
+<dialog id="promoDialog" aria-labelledby="promoTitle" style="
+    background: linear-gradient(135deg, #1f1f1f 0%, #2c2c2c 100%);
+    color: #ffffff;
+    border: 2px solid #bb86fc;
+    border-radius: 16px;
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    font-family: sans-serif;
+    overflow: hidden;
+">
+    <div style="display: flex; justify-content: flex-end; padding: 10px;">
+        <button 
+            onclick="document.getElementById('promoDialog').close()" 
+            aria-label="Kampanyayı Kapat" 
+            style="background: rgba(255,255,255,0.1); border: none; color: #fff; font-size: 1.2rem; cursor: pointer; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s;"
+            onmouseover="this.style.backgroundColor='rgba(207, 102, 121, 0.8)'"
+            onmouseout="this.style.backgroundColor='rgba(255,255,255,0.1)'"
+        >
+            ✕
+        </button>
+    </div>
+
+    <div style="padding: 0 2rem 2.5rem 2rem; text-align: center;">
+        <h2 id="promoTitle" style="color: #bb86fc; margin-bottom: 1rem; font-size: 1.8rem;">
+            <span aria-hidden="true">🎁</span> Bu Ayın Özel Hediyesi!
+        </h2>
+        
+        <p style="font-size: 1.05rem; margin-bottom: 1.5rem; color: #e0e0e0; line-height: 1.6;">
+            <strong>NVDA Eğitimi</strong>'ni şimdi satın alın; <br>
+            <span style="color: #fff;">1.000₺ değerindeki Birebir Eğitim Seansı</span>'na ücretsiz sahip olun!
+        </p>
+
+        <ul role="list" style="list-style: none; padding: 0; margin-bottom: 2rem; text-align: left;">
+            <li style="margin-bottom: 0.8rem; display: flex; align-items: start; gap: 10px;">
+                <span aria-hidden="true" style="color: #bb86fc;">✔</span>
+                <span><strong>Videolu Eğitim:</strong> Temelden eklenti yazımına her şey.</span>
+            </li>
+            <li style="margin-bottom: 0.8rem; display: flex; align-items: start; gap: 10px;">
+                <span aria-hidden="true" style="color: #bb86fc;">✔</span>
+                <span><strong>Birebir Destek:</strong> 40 dakikalık özel canlı seans.</span>
+            </li>
+        </ul>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <button 
+                type="button"
+                onclick="document.getElementById('shopierForm').submit();" 
+                style="background-color: #bb86fc; color: #000; border: none; padding: 1.1rem 2rem; font-size: 1.1rem; font-weight: bold; border-radius: 50px; cursor: pointer; transition: all 0.2s;" 
+                onmouseover="this.style.transform='scale(1.02)'; this.style.box-shadow='0 0 20px rgba(187, 134, 252, 0.4)';" 
+                onmouseout="this.style.transform='scale(1)'; this.style.box-shadow='none';"
+            >
+                Fırsatı Yakala ve Eğitimi Al
+            </button>
+
+            <button 
+                type="button"
+                onclick="document.getElementById('promoDialog').close()" 
+                style="background: transparent; color: #bb86fc; border: 2px solid #bb86fc; padding: 0.9rem 2rem; font-size: 1rem; font-weight: bold; border-radius: 50px; cursor: pointer; transition: all 0.2s;"
+                onmouseover="this.style.backgroundColor='rgba(187, 134, 252, 0.1)'"
+                onmouseout="this.style.backgroundColor='transparent'"
+            >
+                Eğitim Detaylarını İncele
+            </button>
+        </div>
+
+        <p role="alert" style="font-style: italic; color: #cf6679; margin-top: 1.5rem; font-size: 0.85rem; font-weight: 500;">
+            ⚠️ Bu kampanya sadece sınırlı bir süre için geçerlidir.
+        </p>
+    </div>
+</dialog>
+
+<style>
+    #promoDialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(4px);
+    }
+    #promoDialog button:focus {
+        outline: 2px solid #fff;
+        outline-offset: 3px;
+    }
+</style>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('promoDialog');
+        if (modal) {
+            modal.showModal();
+        }
+    });
+</script>
+
 </body>
 
 </html>
